@@ -1,0 +1,171 @@
+#
+#*****************************************************************#
+#   Makefile for Sample OS/2 Token-Ring IBM 16 Driver
+#*****************************************************************#
+#
+
+.SUFFIXES:  .c .asm .obj .lst .def .lnk .lrf .exe .com .imt .inc
+
+###################################################################
+# These are the environment variables for the current directory
+# structure of this package.  If you decide to change any of the
+# paths associated with the building of the driver, be sure to 
+# update these and the paths listed in the file: IBMLK.
+#
+SRCPATH = source
+OBJPATH = os2 
+PRODPATH= product	
+INCPATH = include
+ERRPATH = err
+
+############################################
+# Assembler flags and building rules go here
+#
+AFLAGS=	/MX /DXMITCH /Ddebug=0 /I$(INCPATH) /DOS2
+ASM = masm $(AFLAGS) $(SRCPATH)\$(*B),$*,nul.lst,nul.crf; > $(ERRPATH)\$(*B).err
+
+####################################
+# C building flags and rules go here
+#
+CFLAGS= /Asnw /Zl /c /Zp1 /Ox /G2 /W3 /Ddebug=0 /DXMITCH /I$(INCPATH) /DOS2
+CCL= cl $(CFLAGS) /Fo$*.obj $(SRCPATH)\$(*B).c ; > $(ERRPATH)\$(*B).err 
+
+# Linker		   
+LINK=   link
+
+# Libraries
+LIBS=   c:\os2\doscalls.lib
+
+# Misc 
+DOSFLGS= /DDOS /Ml /Zi
+
+########################################
+# Listing of the objects to link go here
+#
+BTOBJ =$(OBJPATH)\opsys.obj    \
+       $(OBJPATH)\_misc.obj    \
+       $(OBJPATH)\ndis.obj     \
+       $(OBJPATH)\_uprimt.obj  \
+       $(OBJPATH)\uprim.obj    \
+       $(OBJPATH)\hw.obj       \
+       $(OBJPATH)\buff.obj     \
+       $(OBJPATH)\_buff.obj    \
+       $(OBJPATH)\misc.obj     \
+       $(OBJPATH)\initos.obj   \
+       $(OBJPATH)\initnd.obj   \
+       $(OBJPATH)\hwinit.obj   \
+       $(OBJPATH)\strings.obj  \
+       $(OBJPATH)\print.obj    \
+       $(OBJPATH)\mcainit.obj  \
+       $(OBJPATH)\debug.obj    \
+       $(OBJPATH)\gi.obj       \
+       $(OBJPATH)\giexec.obj   \
+       $(OBJPATH)\ticker.obj   \
+       $(OBJPATH)\_init.obj    
+
+##################################################################
+# The header files associated with the build of the source go here
+#       			       
+INCLUDES=	$(INCPATH)\hwbuff.h   \
+       		$(INCPATH)\hw.h   \
+       		$(INCPATH)\version.h   \
+       		$(INCPATH)\giexec.h   \
+       		$(INCPATH)\adapter.h   \
+       		$(INCPATH)\types.h   \
+       		$(INCPATH)\print.h   \
+       		$(INCPATH)\dialogs.h   \
+       		$(INCPATH)\buff.h   \
+       		$(INCPATH)\ndis.h   \
+       		$(INCPATH)\mca.h   \
+       		$(INCPATH)\uprim.h   \
+       		$(INCPATH)\ioctl.h   \
+		$(INCPATH)\devhdr.h   \
+		$(INCPATH)\misc.h   \
+		$(INCPATH)\hwinit.h   \
+		$(INCPATH)\strings.h   \
+		$(INCPATH)\gi.inc   \
+		$(INCPATH)\_hwbuff.inc   \
+		$(INCPATH)\layout.inc   \
+		$(INCPATH)\ioctl.inc   \
+		$(INCPATH)\devhdr.inc   \
+		$(INCPATH)\_buff.inc   \
+		$(INCPATH)\_misc.inc   \
+		$(INCPATH)\ndis.inc   \
+		$(INCPATH)\devhlp.inc   \
+		$(INCPATH)\segments.inc   \
+		$(INCPATH)\_uprim.inc   \
+		$(INCPATH)\bsedos.inc   \
+		$(INCPATH)\os2def.inc   \
+		$(INCPATH)\os2def16.inc   \
+		$(INCPATH)\bsedos16.inc   
+
+#########################################
+#   Rules for building the system go here
+#
+$(PRODPATH)\ibm16.os2 :$(BTOBJ)
+    $(LINK) @ibmlk 
+    cd $(PRODPATH)
+    mapsym ibm16.map
+
+# Targets for the build
+$(OBJPATH)\opsys.obj   : $(SRCPATH)\opsys.asm	   $(INCLUDES)
+    $(ASM) 
+
+$(OBJPATH)\_misc.obj   : $(SRCPATH)\_misc.asm	   $(INCLUDES)
+    $(ASM) 
+
+$(OBJPATH)\ndis.obj    : $(SRCPATH)\ndis.c 	   $(INCLUDES)
+    $(CCL)
+
+$(OBJPATH)\_uprimt.obj : $(SRCPATH)\_uprimt.asm    $(INCLUDES)
+    $(ASM) 
+
+$(OBJPATH)\uprim.obj   : $(SRCPATH)\uprim.c        $(INCLUDES)
+    $(CCL)
+
+$(OBJPATH)\hw.obj      : $(SRCPATH)\hw.c           $(INCLUDES)
+    $(CCL)
+
+$(OBJPATH)\buff.obj    : $(SRCPATH)\buff.c	   $(INCLUDES)
+    $(CCL)
+
+$(OBJPATH)\_buff.obj   : $(SRCPATH)\_buff.asm	   $(INCLUDES)
+    $(ASM) 
+
+$(OBJPATH)\misc.obj    : $(SRCPATH)\misc.c	   $(INCLUDES)
+    $(CCL)
+
+$(OBJPATH)\initos.obj  : $(SRCPATH)\initos.c	   $(INCLUDES)
+    $(CCL)
+
+$(OBJPATH)\initnd.obj  : $(SRCPATH)\initnd.c	   $(INCLUDES)
+    $(CCL)
+
+$(OBJPATH)\hwinit.obj  : $(SRCPATH)\hwinit.c	   $(INCLUDES)
+    $(CCL)
+
+$(OBJPATH)\strings.obj : $(SRCPATH)\strings.c	   $(INCLUDES)
+    $(CCL)
+
+$(OBJPATH)\print.obj   : $(SRCPATH)\print.c	   $(INCLUDES)
+    $(CCL)
+
+$(OBJPATH)\mcainit.obj : $(SRCPATH)\mcainit.c	   $(INCLUDES)
+    $(CCL)
+
+$(OBJPATH)\debug.obj   : $(SRCPATH)\debug.asm      $(INCLUDES)	   
+    $(ASM) 
+
+$(OBJPATH)\gi.obj      : $(SRCPATH)\gi.asm 	   $(INCLUDES)
+    $(ASM) 
+
+$(OBJPATH)\giexec.obj  : $(SRCPATH)\giexec.c	   $(INCLUDES)
+    $(CCL)
+
+$(OBJPATH)\ticker.obj  : $(SRCPATH)\ticker.asm     $(INCLUDES)
+    $(ASM) 
+
+$(OBJPATH)\_init.obj   : $(SRCPATH)\_init.asm	   $(INCLUDES)
+    $(ASM) 
+
+

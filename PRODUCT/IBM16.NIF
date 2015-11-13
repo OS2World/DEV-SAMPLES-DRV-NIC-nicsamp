@@ -1,0 +1,6 @@
+Model = IBM 16 Token Ring Adapter
+Path = TOKENRNG\IBM16
+DeviceDriver = IBM16.DOS
+DeviceName = TOKENRING
+Type = NDIS
+Mediatype = TOKENRING 

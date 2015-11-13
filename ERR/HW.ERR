@@ -1,0 +1,17 @@
+source\hw.c
+include\types.h(12) : warning C4005: 'uchar' : macro redefinition
+include\types.h(13) : warning C4005: 'ushort' : macro redefinition
+include\types.h(14) : warning C4005: 'ulong' : macro redefinition
+source\hw.c(180) : warning C4049: 'argument' : indirection to different types
+source\hw.c(180) : warning C4024: 'gi_transmit' : different types : parameter 1
+source\hw.c(391) : warning C4016: 'srb_request' : no function return type, using int as default
+source\hw.c(391) : warning C4071: 'srb_request' : no function prototype given
+source\hw.c(397) : warning C4101: 'i' : unreferenced local variable
+source\hw.c(639) : warning C4101: 'tmpbyte' : unreferenced local variable
+source\hw.c(841) : warning C4101: 'retStatus' : unreferenced local variable
+source\hw.c(1062) : warning C4016: 'swaps' : no function return type, using int as default
+source\hw.c(1062) : warning C4071: 'swaps' : no function prototype given
+source\hw.c(1143) : warning C4047: ':' : different levels of indirection
+source\hw.c(1143) : warning C4047: '=' : different levels of indirection
+source\hw.c(1147) : warning C4022: '_bcopy' : pointer mismatch : parameter 2
+source\hw.c(1164) : warning C4022: '_bcopy' : pointer mismatch : parameter 2

@@ -1,0 +1,4 @@
+source\uprim.c
+include\types.h(12) : warning C4005: 'uchar' : macro redefinition
+include\types.h(13) : warning C4005: 'ushort' : macro redefinition
+include\types.h(14) : warning C4005: 'ulong' : macro redefinition

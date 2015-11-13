@@ -1,0 +1,7 @@
+; OS/2 Device Driver link definition
+; $Header:   \ibm16\os2dev.def   2-8-93  jess fahland  $
+; Copyright (C) 1993 DWB Associates, All Rights Reserved
+LIBRARY
+PROTMODE
+
+

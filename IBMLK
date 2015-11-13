@@ -1,0 +1,25 @@
+os2\OPSYS.OBJ   +  
+os2\_MISC.OBJ   +  
+os2\NDIS.OBJ    +  
+os2\_UPRIMT.OBJ +  
+os2\UPRIM.OBJ   +
+os2\HW.OBJ      +  
+os2\BUFF.OBJ    +  
+os2\_BUFF.OBJ   +  
+os2\MISC.OBJ    +  
+os2\INITOS.OBJ  +  
+os2\INITND.OBJ  +  
+os2\HWINIT.OBJ  +  
+os2\STRINGS.OBJ +
+os2\PRINT.OBJ   +  
+os2\MCAINIT.OBJ +  
+os2\DEBUG.OBJ   +  
+os2\GI.OBJ      +   
+os2\GIEXEC.OBJ  +  
+os2\TICKER.OBJ  +  
+os2\_INIT.OBJ /NOD /NOI  
+product\ibm16.os2
+product\ibm16.map /map
+c:\os2\doscalls.lib
+os2dev.def ;
+

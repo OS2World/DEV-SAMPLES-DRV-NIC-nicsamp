@@ -1,0 +1,5 @@
+source\print.c
+source\print.c(378) : warning C4135: conversion between different integral types
+source\print.c(259) : warning C4059: segment lost in conversion
+source\print.c(346) : warning C4061: long/short mismatch in argument : conversion supplied
+source\print.c(378) : warning C4061: long/short mismatch in argument : conversion supplied

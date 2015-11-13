@@ -1,0 +1,36 @@
+source\hwinit.c
+include\misc.h(29) : warning C4005: 'uchar' : macro redefinition
+include\misc.h(30) : warning C4005: 'ushort' : macro redefinition
+include\misc.h(31) : warning C4005: 'ulong' : macro redefinition
+source\hwinit.c(32) : warning C4028: parameter 4 declaration different
+source\hwinit.c(83) : warning C4016: 'strchr' : no function return type, using int as default
+source\hwinit.c(83) : warning C4071: 'strchr' : no function prototype given
+source\hwinit.c(83) : warning C4047: '=' : different levels of indirection
+source\hwinit.c(188) : warning C4020: 'physToUVirt' : too many actual parameters
+source\hwinit.c(208) : warning C4020: 'physToUVirt' : too many actual parameters
+source\hwinit.c(245) : warning C4028: parameter 4 declaration different
+source\hwinit.c(284) : warning C4101: 'i' : unreferenced local variable
+source\hwinit.c(323) : warning C4020: 'physToUVirt' : too many actual parameters
+source\hwinit.c(369) : warning C4020: 'physToUVirt' : too many actual parameters
+source\hwinit.c(399) : warning C4020: 'physToUVirt' : too many actual parameters
+source\hwinit.c(417) : warning C4020: 'physToUVirt' : too many actual parameters
+source\hwinit.c(419) : warning C4101: 'addroffset' : unreferenced local variable
+source\hwinit.c(530) : warning C4101: 'op' : unreferenced local variable
+source\hwinit.c(554) : warning C4135: conversion between different integral types
+source\hwinit.c(575) : warning C4047: '=' : different levels of indirection
+source\hwinit.c(579) : warning C4047: '=' : different levels of indirection
+source\hwinit.c(611) : warning C4071: 'strcmp' : no function prototype given
+source\hwinit.c(668) : warning C4047: 'argument' : different levels of indirection
+source\hwinit.c(668) : warning C4024: 'setIrq' : different types : parameter 1
+source\hwinit.c(794) : warning C4047: 'initializing' : different levels of indirection
+source\hwinit.c(838) : warning C4047: '=' : different levels of indirection
+source\hwinit.c(857) : warning C4135: conversion between different integral types
+source\hwinit.c(891) : warning C4047: '=' : different levels of indirection
+source\hwinit.c(188) : warning C4061: long/short mismatch in argument : conversion supplied
+source\hwinit.c(208) : warning C4061: long/short mismatch in argument : conversion supplied
+source\hwinit.c(323) : warning C4061: long/short mismatch in argument : conversion supplied
+source\hwinit.c(369) : warning C4061: long/short mismatch in argument : conversion supplied
+source\hwinit.c(399) : warning C4061: long/short mismatch in argument : conversion supplied
+source\hwinit.c(417) : warning C4061: long/short mismatch in argument : conversion supplied
+source\hwinit.c(578) : warning C4061: long/short mismatch in argument : conversion supplied
+source\hwinit.c(837) : warning C4061: long/short mismatch in argument : conversion supplied

@@ -1,0 +1,23 @@
+source\giexec.c
+include\misc.h(29) : warning C4005: 'uchar' : macro redefinition
+include\misc.h(30) : warning C4005: 'ushort' : macro redefinition
+include\misc.h(31) : warning C4005: 'ulong' : macro redefinition
+source\giexec.c(542) : warning C4135: conversion between different integral types
+source\giexec.c(544) : warning C4135: conversion between different integral types
+source\giexec.c(546) : warning C4135: conversion between different integral types
+source\giexec.c(548) : warning C4135: conversion between different integral types
+source\giexec.c(684) : warning C4101: 'xmt' : unreferenced local variable
+source\giexec.c(759) : warning C4016: 'waitForGreqComplete' : no function return type, using int as default
+source\giexec.c(759) : warning C4071: 'waitForGreqComplete' : no function prototype given
+source\giexec.c(961) : warning C4028: parameter 1 declaration different
+source\giexec.c(1058) : warning C4020: 'physToUVirt' : too many actual parameters
+source\giexec.c(1061) : warning C4020: 'physToUVirt' : too many actual parameters
+source\giexec.c(1174) : warning C4020: 'physToUVirt' : too many actual parameters
+source\giexec.c(1175) : warning C4020: 'physToUVirt' : too many actual parameters
+source\giexec.c(1178) : warning C4101: 'addroffset' : unreferenced local variable
+source\giexec.c(1178) : warning C4101: 'tmpinit' : unreferenced local variable
+source\giexec.c(1178) : warning C4101: 'i' : unreferenced local variable
+source\giexec.c(1058) : warning C4061: long/short mismatch in argument : conversion supplied
+source\giexec.c(1061) : warning C4061: long/short mismatch in argument : conversion supplied
+source\giexec.c(1174) : warning C4061: long/short mismatch in argument : conversion supplied
+source\giexec.c(1175) : warning C4061: long/short mismatch in argument : conversion supplied
